@@ -1,0 +1,52 @@
+#eureka:
+#  instance:
+#    hostname: ${HOSTNAME:localhost}
+#
+#  client:
+#    serviceUrl:
+#      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}/eureka/
+#    enabled: ${EUREKA_ENABLE:false}
+#    fetch-registry: true
+#    healthcheck:
+#      enabled: true
+
+spring:
+  application:
+    name: api-wilayah
+
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
+#  zipkin:
+#    tracing:
+#      endpoint: http://${ZIPKIN_HOST:localhost}:${ZIPKIN_PORT:9411}/api/v2/spans
+#  otlp:
+#    tracing:
+#      endpoint: http://${OLTP_HOST:localhost}:${OLTP_PORT:4318}/v1/metrics
+#  wavefront:
+#    application:
+#      service-name: ${spring.application.name}
+
+#  health:
+#    diskspace:
+#      enabled: true
+#    db:
+#      enabled: true
+#
+#  endpoint:
+#    health:
+#      probes:
+#        enabled: true
+#      show-details: always
+#      show-components: always
+#
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "resume,pause,restart,refresh,metrics,threaddump,heapdump,info,health,health-path"
+
+
+server:
+  port: ${APPLICATION_PORT:9091}
+  shutdown: graceful
