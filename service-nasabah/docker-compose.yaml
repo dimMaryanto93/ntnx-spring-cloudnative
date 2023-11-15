@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  nasabah:
+    image: dimmaryanto93/collega-service:nasabah
+    environment:
+      SERVICE_WILAYAH_HOST: wilayah
+      SERVICE_WILAYAH_PORT: 9091
+    ports:
+      - "9092:9092"

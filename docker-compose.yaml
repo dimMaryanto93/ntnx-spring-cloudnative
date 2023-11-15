@@ -1,0 +1,15 @@
+version: '3.9'
+volumes:
+  pg_data: {}
+services:
+  wilayah:
+    image: dimmaryanto93/collega-service:wilayah
+    ports:
+      - "9091:9091"
+  nasabah:
+    image: dimmaryanto93/collega-service:nasabah
+    ports:
+      - "9092:9092"
+    environment:
+      SERVICE_WILAYAH_HOST: wilayah
+      SERVICE_WILAYAH_PORT: 9091
