@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wilayah
+  labels:
+    app: wilayah
+    env: dev
+    tier: backend
+    framework: springboot
+    release: "1.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wilayah
+      env: dev
+      tier: backend
+      framework: springboot
+      release: "1.0"
+  template:
+    metadata:
+      name: wilayah
+      labels:
+        app: wilayah
+        env: dev
+        tier: backend
+        framework: springboot
+        release: "1.0"
+    spec:
+      containers:
+        - name: wilayah
+          ports:
+            - containerPort: 9092
+          resources:
+            requests:
+              cpu: 100m
+              memory: 200Mi
+            limits:
+              cpu: 500m
+              memory: 500Mi
+          image: dimmaryanto93/collega-service:wilayah
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nasabah
+spec:
+  selector:
+    app: nasabah
+    env: dev
+    tier: backend
+    framework: springboot
+    release: "1.0"
+  ports:
+    - protocol: TCP
+      port: 9092
+      targetPort: 9092
+  type: NodePort
