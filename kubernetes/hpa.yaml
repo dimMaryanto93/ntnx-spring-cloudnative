@@ -1,0 +1,13 @@
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v1
+metadata:
+  name: webapp
+  namespace: dimasm
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: webapp
+    apiVersion: apps/v1
+  minReplicas: 3
+  maxReplicas: 8
+  targetCPUUtilizationPercentage: 80
